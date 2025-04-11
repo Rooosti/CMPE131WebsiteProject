@@ -100,11 +100,93 @@
 3. Recipe deleted before submission: System shows error.
 4. System issue: Changes not saved, and user is notified.
 
-6..
-7..
-8..
-9..
-10..
+# 6. Delete Recipe
+- **Pre-condition:**
+User is logged into the webpage.
+- **Trigger:**
+User presses delete button on a recipe that they own (created).
+- **Primary Sequence:**
+1. User presses delete button on a recipe.
+2. Prompt opens to confirm the user wants to delete the recipe.
+3. The recipe chosen is removed from the database.
+4. User is informed that the recipe has been successfully deleted.
+5. Page is refreshed after user acknowledges the information.
+- **Primary Postconditions:** 
+Recipe has been deleted from the database and is no longer stored.
+- **Alternate Sequence:**
+1. User presses delete button on a recipe.
+2. Prompt opens to confirm the user wants to delete the recipe.
+3. Recipe cannot be found when searching the database to delete it.
+4. User is informed that the chosen recipe already doesn't exist.
+5. Page is refreshed after user acknowledges the information.
+
+# 7. View Recipe
+- **Pre-condition:**
+User is logged into the webpage.
+- **Trigger:**
+User presses delete button on a recipe that they own (created).
+- **Primary Sequence:**
+1. User uses some recipe access (search bar, direct URL, filter, etc).
+2. Prompt opens to confirm the user wants to delete the recipe.
+3. The recipe chosen is removed from the database.
+4. User is informed that the recipe has been successfully deleted.
+- **Primary Postconditions:** 
+Recipe has been deleted from the database and is no longer stored.
+- **Alternate Sequence:**
+1. User presses delete button.
+2. Prompt opens to confirm the user wants to delete the recipe.
+3. Recipe cannot be found when searching the database to delete it.
+4. User is informed that the chosen recipe already doesn't exist.
+
+# 8. Search Recipe
+1. User types in a search parameter (tag, name, etc.) into search bar.
+2. A page listing all relevant recipes is shown.
+3. User looks for the specific recipe they are interested in (scrolling through the list).
+4. The user finds their desired recipe and clicks a link to access the recipe's page.
+- **Primary Postconditions:**
+N/A - No data was added or changed (considering current use cases and functionality).
+- **Alternate Sequence:**
+1. User types in a search parameter (tag, name, etc.) into search bar.
+2. No recipes are found with the specificied keywords and search parameters.
+3. User is informed that no results have been found.
+
+# 9. Rate Recipe
+- **Pre-condition:**
+User has an account in the database.
+User is logged into the webpage.
+The recipe to rate exists in the database.
+- **Trigger:**
+User presses rate button on a recipe that they do not own (created).
+1. User types in a search parameter (tag, name, etc.) into search bar.
+2. A page listing all relevant recipes is shown.
+3. User looks for the specific recipe they are interested in (scrolling through the list).
+4. The user finds their desired recipe and clicks a link to access the recipe's page.
+- **Primary Postconditions:**
+Average rating of a rated recipe is updated and stored.
+- **Alternate Sequence:**
+1. User uses some recipe access (search bar, direct URL, filter, account, etc).
+2. User presses rate button on their own created recipe and rates the recipe out of 5 stars.
+3. User is informed that they cannot rate their own recipes.
+
+# 10. Comment on Recipe
+- **Pre-condition:**
+User has an account in the database.
+User is logged into the webpage.
+The recipe to comment on exists in the database.
+- **Trigger:**
+User presses comment button on a recipe regardless of ownership.
+1. User uses some recipe access (search bar, direct URL, filter, account, etc).
+2. User presses comment button on the page of the specific recipe they'd like to comment on.
+3. A text box appears and the user types out their comment.
+4. User presses submit and the comment is appended to the recipe.
+- **Primary Postconditions:**
+Information about comment count and accessible comments updates accordingly (comment shows on recipe, number increases by one).
+- **Alternate Sequence:**
+1. User uses some recipe access (search bar, direct URL, filter, account, etc).
+2. User presses comment button on the page of the specific recipe they'd like to comment on.
+3. A text box appears and the user types out their comment.
+4. User presses submit, but the recipe no longer exists (deleted by recipe owner or admin while the user was commenting).
+5. User is informed that the recipe no longer exists and cannot be commented on.
 
 11. Edit User Profile
 - **Pre-condition:** 
